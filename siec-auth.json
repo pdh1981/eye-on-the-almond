@@ -1,0 +1,6 @@
+{
+  "keycloakUrl": "https://kc.siec.ac.uk",
+  "realm": "siec",
+  "clientId": "eaec941c-52d7-440a-87cf-5560a90ea0c5",
+  "staUrl": "https://sensors-staging.siec.ac.uk/FROST-Server/v1.1"
+}

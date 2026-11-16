@@ -1,0 +1,76 @@
+{
+  "_comment": "Settings for the 'The Almond today' panel (lib/Views/AlmondTodayPanel.tsx).",
+  "helperUrl": "http://localhost:3003",
+  "waterQuality": {
+    "sensor": "WQ009",
+    "sensorName": "Forth-ERA Proteus at Memsstar",
+    "staleHours": 6,
+    "_standards": "SEPA river standards for lowland, high-alkalinity rivers (Scotland River Basin Management Planning Directions 2014; UKTAG). Official classification uses a year of samples (10th or 90th percentile); this panel applies the same boundaries to the latest reading, so it is indicative only.",
+    "tests": [
+      {
+        "label": "Dissolved oxygen",
+        "match": "Dissolved Oxygen",
+        "unit": "% saturation",
+        "higherIsBetter": true,
+        "bounds": {
+          "High": 70,
+          "Good": 60,
+          "Moderate": 54,
+          "Poor": 45
+        }
+      },
+      {
+        "label": "Ammonia (as N)",
+        "match": "Ammonium",
+        "unit": "mg/l N",
+        "factor": 0.7765,
+        "_factor": "Proteus reports ammonium (NH4) in mg/l; standards are total ammonia as nitrogen, so multiply by 14/18.",
+        "bounds": {
+          "High": 0.3,
+          "Good": 0.6,
+          "Moderate": 1.1,
+          "Poor": 2.5
+        }
+      },
+      {
+        "label": "BOD",
+        "match": "Biochemical Oxygen Demand",
+        "unit": "mg/l",
+        "bounds": {
+          "High": 4,
+          "Good": 5,
+          "Moderate": 6.5,
+          "Poor": 9
+        }
+      }
+    ]
+  },
+  "rainfall": {
+    "_comment": "SEPA rain gauges inside the catchment (KiWIS). Totals are the average of the gauges. Daily totals run 09:00 to 09:00.",
+    "kiwisUrl": "https://timeseries.sepa.org.uk/KiWIS/KiWIS",
+    "gauges": [
+      {
+        "name": "Whitburn",
+        "hourTsId": "54394010",
+        "dayTsId": "54393010"
+      },
+      {
+        "name": "Gogarbank",
+        "hourTsId": "56597010",
+        "dayTsId": "56596010"
+      }
+    ]
+  },
+  "classification": {
+    "url": "data/almond/rivers.geojson",
+    "property": "overall_classification",
+    "year": 2024
+  },
+  "floodWarnings": {
+    "_comment": "SEPA's live flood warning feed needs an access request (ffw@sepa.org.uk); until then the panel links to SEPA's flood updates.",
+    "url": "https://www.sepa.org.uk/",
+    "linkText": "Check SEPA flood updates"
+  },
+  "placement": "strip",
+  "overflowSummaryUrl": "data/live/overflow-summary.json"
+}

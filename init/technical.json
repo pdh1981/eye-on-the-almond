@@ -1,0 +1,221 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "Technical view (Scottish Water and SEPA)",
+      "isOpen": true,
+      "members": [
+        {
+          "id": "tech-public-sewage",
+          "type": "geojson",
+          "name": "Public sewage treatment works and overflows",
+          "url": "data/almond/permits.geojson",
+          "description": "SEPA CAR authorisations for public sewage discharges in the catchment: waste water treatment works, combined sewer overflows (CSOs) and emergency overflows. Positions are SEPA's representative grid references. Live overflow (EDM) spill data is not in SEPA's open services, so spills are not shown.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTdhN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgM3Y0YTEgMSAwIDAgMCAxIDFoNCIgLz48cGF0aCBkPSJNNSA4di0zYTIgMiAwIDAgMSAyIC0yaDdsNSA1djExYTIgMiAwIDAgMSAtMiAyaC01IiAvPjxwYXRoIGQ9Ik02IDE0bS0zIDBhMyAzIDAgMSAwIDYgMGEzIDMgMCAxIDAgLTYgMCIgLz48cGF0aCBkPSJNNC41IDE3bC0xLjUgNWwzIC0xLjVsMyAxLjVsLTEuNSAtNSIgLz48L2c+PC9zdmc+",
+                "height": 29,
+                "width": 29,
+                "pixelOffset": [
+                  0,
+                  -15
+                ]
+              },
+              "mapType": "enum",
+              "column": "category",
+              "enum": []
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "activeStyle": "category",
+          "styles": [
+            {
+              "id": "category",
+              "title": "Permit type",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTdhN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgM3Y0YTEgMSAwIDAgMCAxIDFoNCIgLz48cGF0aCBkPSJNNSA4di0zYTIgMiAwIDAgMSAyIC0yaDdsNSA1djExYTIgMiAwIDAgMSAtMiAyaC01IiAvPjxwYXRoIGQ9Ik02IDE0bS0zIDBhMyAzIDAgMSAwIDYgMGEzIDMgMCAxIDAgLTYgMCIgLz48cGF0aCBkPSJNNC41IDE3bC0xLjUgNWwzIC0xLjVsMyAxLjVsLTEuNSAtNSIgLz48L2c+PC9zdmc+",
+                  "height": 29,
+                  "width": 29,
+                  "pixelOffset": [
+                    0,
+                    -15
+                  ]
+                },
+                "mapType": "enum",
+                "column": "category",
+                "enum": []
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "category",
+              "type": "enum"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{category}}\n\n**Activity:** {{activity}}  \n**Holder:** {{holder}}  \n**Licence:** {{licence}} ({{reference}})\n\n{{description}}"
+          },
+          "filterByProperties": {
+            "category": "Public sewage (treatment works and overflows)"
+          },
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-uwwtd-rivers",
+          "type": "esri-mapServer",
+          "name": "UWWTD sensitive areas: rivers",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Regulation_Zones/MapServer/9",
+          "opacity": 0.9,
+          "description": "Rivers designated as sensitive areas under the Urban Waste Water Treatment Directive, where discharges may need extra (nutrient) treatment.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-uwwtd-catchments",
+          "type": "esri-mapServer",
+          "name": "UWWTD sensitive areas: catchments",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Regulation_Zones/MapServer/6",
+          "opacity": 0.4,
+          "description": "Catchments draining to UWWTD sensitive areas.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-dwpa-rivers",
+          "type": "esri-mapServer",
+          "name": "Drinking Water Protected Areas: rivers",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Regulation_Zones/MapServer/1",
+          "opacity": 0.9,
+          "description": "Rivers designated as Drinking Water Protected Areas.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-dwpa-catchments",
+          "type": "esri-mapServer",
+          "name": "Drinking Water Protected Areas: catchments",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Regulation_Zones/MapServer/3",
+          "opacity": 0.4,
+          "description": "Catchments of Drinking Water Protected Areas.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-salmonid",
+          "type": "esri-mapServer",
+          "name": "Wild Salmonid Protection Zones",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Regulation_Zones/MapServer/13",
+          "opacity": 0.5,
+          "description": "SEPA Wild Salmonid Protection Zones.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "tech-nfra-pva",
+          "type": "esri-mapServer",
+          "name": "Potentially Vulnerable Areas (National Flood Risk Assessment)",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/NFRA_PVA_Flood_Risk_Data_Latest/MapServer/0",
+          "opacity": 0.5,
+          "description": "SEPA's Potentially Vulnerable Areas from the latest National Flood Risk Assessment, where flooding could have significant impact.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        }
+      ]
+    }
+  ],
+  "workbench": [
+    "almond-boundary",
+    "tech-public-sewage",
+    "almond-flows",
+    "almond-rf-med",
+    "almond-future-river"
+  ],
+  "models": {
+    "almond-rf-med": {
+      "splitDirection": -1,
+      "name": "River flooding today (medium likelihood)"
+    },
+    "almond-future-river": {
+      "splitDirection": 1
+    }
+  },
+  "showSplitter": true,
+  "splitPosition": 0.5,
+  "initialCamera": {
+    "west": -3.56,
+    "south": 55.875,
+    "east": -3.47,
+    "north": 55.915
+  },
+  "baseMaps": {
+    "items": [
+      {
+        "item": {
+          "id": "basemap-light-grey-esri",
+          "name": "Light grey (Esri)",
+          "type": "esri-mapServer",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+          "attribution": "Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community",
+          "opacity": 1
+        },
+        "image": "images/basemaps/light-grey-esri.png",
+        "contrastColor": "#000000"
+      },
+      {
+        "item": {
+          "id": "basemap-light-grey-esri-labels",
+          "name": "Light grey with labels (Esri)",
+          "type": "composite",
+          "members": [
+            {
+              "id": "basemap-light-grey-esri-labels/labels",
+              "name": "Labels (Esri)",
+              "type": "esri-mapServer",
+              "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer",
+              "opacity": 1
+            },
+            {
+              "id": "basemap-light-grey-esri-labels/base",
+              "name": "Light grey (Esri)",
+              "type": "esri-mapServer",
+              "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+              "attribution": "Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community",
+              "opacity": 1
+            }
+          ]
+        },
+        "image": "images/basemaps/light-grey-esri-labels.png",
+        "contrastColor": "#000000"
+      },
+      {
+        "item": {
+          "id": "basemap-light-grey-positron",
+          "name": "Light grey (CARTO Positron, OpenStreetMap)",
+          "type": "url-template-imagery",
+          "url": "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+          "subdomains": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "maximumLevel": 19,
+          "attribution": "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a> © <a href='https://carto.com/attributions'>CARTO</a>",
+          "opacity": 1
+        },
+        "image": "images/basemaps/light-grey-positron.png",
+        "contrastColor": "#000000"
+      }
+    ]
+  }
+}

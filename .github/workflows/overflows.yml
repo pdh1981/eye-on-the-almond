@@ -1,0 +1,40 @@
+# Every 15 minutes: read Scottish Water's open overflow feed, add new spills
+# in the Almond catchment to the spill log, and commit the files the site
+# reads (data/live/). Scottish Water data is open data; no secrets are used.
+name: Scottish Water overflows
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: overflows
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Poll Scottish Water
+        run: node tools/pages-overflows.js .
+      - name: Save the new data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live
+          if git diff --cached --quiet; then
+            echo "No change"
+          else
+            git commit -m "Overflow data $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase
+            git push
+          fi

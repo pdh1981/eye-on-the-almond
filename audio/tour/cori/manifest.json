@@ -1,0 +1,41 @@
+{
+ "voice": "cori",
+ "attribution": "Voice: Piper en_GB cori (public domain, LibriVox)",
+ "scenes": {
+  "almond-1": {
+   "file": "almond-1.mp3",
+   "hash": "8af82a19f82ee5483def62a64caa6ad2c16485ea",
+   "script": "Hi, I'm the River Almond. I start as small burns on the moors near Harthill and Cobbinshaw and flow east past Whitburn, Livingston and Kirkliston, to meet the Firth of Forth at Cramond. About 385 square kilometres of land drains into me. The dark blue line is my catchment: every drop of rain that falls inside it ends up in me. Let's follow Jenna, who lives in Livingston and loves paddleboarding and walking her dog along my banks."
+  },
+  "almond-2": {
+   "file": "almond-2.mp3",
+   "hash": "e4390d6fd3c15e48669423adc52afaa8f8722383",
+   "script": "How I'm feeling today. These dots are my live gauges. Seepa measures my level, and the rainfall on my catchment, every 15 minutes. Blue means I'm at a normal level. Orange and red mean I'm rising towards the kind of peak I usually reach about once a year. The shaded areas are my three stretches, Upper, Middle and Lower. Each is coloured by how I'm flowing there right now: green is normal, amber is low or high, red is very low or very high. Click a stretch or any gauge to see my last 7 days as a chart."
+  },
+  "almond-3": {
+   "file": "almond-3.mp3",
+   "hash": "72ab251c9683591978a24d13840ed650b3ce11f4",
+   "script": "Jenna checks on me in Livingston. Jenna wants to paddle near Almond dell this weekend. For her, two things matter: how fast I'm flowing and how clear I am. The Almond dell gauge, just downstream of Livingston, tells her whether I'm sluggish, steady or running high. After heavy rain I can rise quickly here, so it's worth checking before she gets in."
+  },
+  "almond-4": {
+   "file": "almond-4.mp3",
+   "hash": "fb15320b09fb42b3b32829390749d194731c8f35",
+   "script": "What's building up inside me. Today Jenna notices I look murky, and wants to know why. Seepa checks the health of each stretch of river. In 2024, 18 of my 20 stretches were rated Poor; only 2 were Good. The colours on the map show each stretch and the land that drains into it. One of the things that can hold me back is phosphorus. It comes from treated and untreated wastewater, from farmland after heavy rain, and from everyday products washed down drains. Too much of it feeds algae, which clouds my water and uses up oxygen my fish need. The small dots are Seepa water permits. The dark red ones are public sewage treatment works and overflows. Click a stretch to open Seepa's classification sheet for it, or a dot to see what the permit is for."
+  },
+  "almond-5": {
+   "file": "almond-5.mp3",
+   "hash": "7131e5909ee16bb07b529a1d55f9dfeb67463e99",
+   "script": "When it rains hard. When heavy rain falls on my catchment, I can burst my banks. The blue areas are Seepa's flood maps: dark blue has a 1 in 10 chance of flooding each year, lighter blue a 1 in 200 chance. Here in Livingston and Mid Calder, the land closest to me is the first to flood. Heavy rain can also overwhelm sewers, which then spill into me through overflows. That's one reason my water quality can drop after a storm."
+  },
+  "almond-6": {
+   "file": "almond-6.mp3",
+   "hash": "666cc4a2ce05a1f6cb6827bbdc949c0a948d34d4",
+   "script": "Barriers in my way. Salmon and sea trout need to swim up and down me, but weirs, culverts and bridges get in the way. Seepa records 66 obstacles to fish passage in my catchment. The coloured lines show how much each stretch has been physically changed by people, straightened, walled in or culverted. The more modified I am, the fewer places wildlife has to live."
+  },
+  "almond-7": {
+   "file": "almond-7.mp3",
+   "hash": "8b748784ae7ec781ae49d348a2336d59ab36f329",
+   "script": "How you can help me. Jenna goes home knowing a bit more about me, and a few things she can do: Only flush the three Ps, pee, poo and paper. Wipes and fat block sewers and cause spills. Report pollution, odd colours or dead fish to Seepa on oh eight hundred, eight oh, seven oh, six oh, any time. Check your home's plumbing isn't misconnected, sending washing-machine water into a surface drain that leads straight to me. Join a river clean-up or citizen science group with the Forth Rivers Trust. Thanks for spending time with me. Close this panel to explore the map yourself."
+  }
+ }
+}

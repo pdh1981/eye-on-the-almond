@@ -1,0 +1,1505 @@
+{
+  "homeCamera": {
+    "west": -3.86,
+    "south": 55.74,
+    "east": -3.24,
+    "north": 55.995
+  },
+  "initialCamera": {
+    "west": -3.86,
+    "south": 55.74,
+    "east": -3.24,
+    "north": 55.995
+  },
+  "viewerMode": "3d",
+  "catalog": [
+    {
+      "type": "group",
+      "name": "Real-time data",
+      "description": "Live readings from SEPA gauges, refreshed every 15 minutes.",
+      "members": [
+        {
+          "id": "almond-levels",
+          "type": "sepa-gauges",
+          "name": "River levels",
+          "parameter": "S",
+          "timeseriesName": "15minute",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "statsUrl": "data/almond/gauge-stats.json",
+          "chartPeriod": "P7D",
+          "refreshInterval": 900,
+          "description": "Live river levels from SEPA's hydrometric network (15-minute readings, refreshed every 15 minutes). Each gauge is rated against its median annual maximum, the typical yearly flood peak calculated from the full SEPA record.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyA3YzMgLTIgNiAtMiA5IDBzNiAyIDkgMCIgLz48cGF0aCBkPSJNMyAxN2MzIC0yIDYgLTIgOSAwczYgMiA5IDAiIC8+PHBhdGggZD0iTTMgMTJjMyAtMiA2IC0yIDkgMHM2IDIgOSAwIiAvPjwvZz48L3N2Zz4=",
+                "height": 36,
+                "width": 36,
+                "pixelOffset": [
+                  0,
+                  -18
+                ]
+              },
+              "mapType": "enum",
+              "column": "status",
+              "enum": []
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{station}}\n\n**{{measure}}:** {{latestValue}} {{unit}} at {{latestTime}}, **{{trend}}**\n\n**Status:** {{status}}\n\n| | |\n|---|---|\n| Typical annual flood peak (median annual maximum) | {{medianAnnualMax}} {{unit}} |\n| Current reading as % of that | {{percentOfAnnualMax}}% |\n| Highest annual peak on record | {{recordMax}} {{unit}} |\n\n<chart title=\"{{station}}: {{measure}} (last 7 days)\" id=\"{{stationNumber}}\">\n{{{chartCsv}}}\n</chart>\n\nSource: SEPA KiWIS, station {{stationNumber}}."
+          },
+          "activeStyle": "status",
+          "styles": [
+            {
+              "id": "status",
+              "title": "Status",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyA3YzMgLTIgNiAtMiA5IDBzNiAyIDkgMCIgLz48cGF0aCBkPSJNMyAxN2MzIC0yIDYgLTIgOSAwczYgMiA5IDAiIC8+PHBhdGggZD0iTTMgMTJjMyAtMiA2IC0yIDkgMHM2IDIgOSAwIiAvPjwvZz48L3N2Zz4=",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                "mapType": "enum",
+                "column": "status",
+                "enum": []
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "status",
+              "type": "enum"
+            },
+            {
+              "name": "chartCsv",
+              "type": "hidden"
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-flows",
+          "type": "sepa-gauges",
+          "name": "River flows",
+          "parameter": "Q",
+          "timeseriesName": "15minute",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "statsUrl": "data/almond/gauge-stats.json",
+          "chartPeriod": "P7D",
+          "refreshInterval": 900,
+          "description": "Live river flows from SEPA's hydrometric network (15-minute readings, refreshed every 15 minutes). Each gauge is rated against its median annual maximum, the typical yearly flood peak calculated from the full SEPA record.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTcgMTBoNHY0IiAvPjxwYXRoIGQ9Ik0zIDEyYy44ODcgLTEuMjg0IDIuNDggLTIuMDMzIDQgLTJjMS41MiAtLjAzMyAzLjExMyAuNzE2IDQgMnMyLjQ4IDIuMDMzIDQgMmMxLjUyIC4wMzMgMyAtMSA0IC0ybDIgLTIiIC8+PC9nPjwvc3ZnPg==",
+                "height": 36,
+                "width": 36,
+                "pixelOffset": [
+                  0,
+                  -18
+                ]
+              },
+              "mapType": "enum",
+              "column": "status",
+              "enum": []
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{station}}\n\n**{{measure}}:** {{latestValue}} {{unit}} at {{latestTime}}, **{{trend}}**\n\n**Status:** {{status}}\n\n| | |\n|---|---|\n| Typical annual flood peak (median annual maximum) | {{medianAnnualMax}} {{unit}} |\n| Current reading as % of that | {{percentOfAnnualMax}}% |\n| Highest annual peak on record | {{recordMax}} {{unit}} |\n\n<chart title=\"{{station}}: {{measure}} (last 7 days)\" id=\"{{stationNumber}}\">\n{{{chartCsv}}}\n</chart>\n\nSource: SEPA KiWIS, station {{stationNumber}}."
+          },
+          "show": false,
+          "activeStyle": "status",
+          "styles": [
+            {
+              "id": "status",
+              "title": "Status",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTcgMTBoNHY0IiAvPjxwYXRoIGQ9Ik0zIDEyYy44ODcgLTEuMjg0IDIuNDggLTIuMDMzIDQgLTJjMS41MiAtLjAzMyAzLjExMyAuNzE2IDQgMnMyLjQ4IDIuMDMzIDQgMmMxLjUyIC4wMzMgMyAtMSA0IC0ybDIgLTIiIC8+PC9nPjwvc3ZnPg==",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                "mapType": "enum",
+                "column": "status",
+                "enum": []
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "status",
+              "type": "enum"
+            },
+            {
+              "name": "chartCsv",
+              "type": "hidden"
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-rain",
+          "type": "sepa-gauges",
+          "name": "Rainfall gauges",
+          "parameter": "Precip",
+          "timeseriesName": "15minute.Total",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "statsUrl": "data/almond/gauge-stats.json",
+          "chartPeriod": "P7D",
+          "refreshInterval": 900,
+          "description": "**Full title:** Rainfall\n\nLive rainfall from SEPA's hydrometric network (15-minute readings, refreshed every 15 minutes).",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                "height": 36,
+                "width": 36,
+                "pixelOffset": [
+                  0,
+                  -18
+                ]
+              },
+              "mapType": "enum",
+              "column": "status",
+              "enum": [
+                {
+                  "value": "Dry (under 1 mm in 24 h)",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4ZmIzY2MiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                {
+                  "value": "Light (1 to 10 mm in 24 h)",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM0YTkwYzIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                {
+                  "value": "Moderate (10 to 25 mm in 24 h)",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMyYzVmOWUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                {
+                  "value": "Heavy (over 25 mm in 24 h)",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMxYjJmNmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                {
+                  "value": "No recent data",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                }
+              ]
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{station}} rain gauge\n\n**Status:** {{status}}\n\n| Period | Rainfall |\n|---|---|\n| Last hour | {{last1h}} mm |\n| Last 24 hours | {{last24h}} mm |\n| Last 7 days | {{last7d}} mm |\n\nLatest reading: {{latestTime}}\n\n<chart title=\"{{station}}: {{measure}} (last 7 days)\" id=\"{{stationNumber}}\">\n{{{chartCsv}}}\n</chart>\n\nSource: SEPA KiWIS, station {{stationNumber}}."
+          },
+          "activeStyle": "status",
+          "styles": [
+            {
+              "id": "status",
+              "title": "Status",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                "mapType": "enum",
+                "column": "status",
+                "enum": [
+                  {
+                    "value": "Dry (under 1 mm in 24 h)",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4ZmIzY2MiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  },
+                  {
+                    "value": "Light (1 to 10 mm in 24 h)",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM0YTkwYzIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  },
+                  {
+                    "value": "Moderate (10 to 25 mm in 24 h)",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMyYzVmOWUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  },
+                  {
+                    "value": "Heavy (over 25 mm in 24 h)",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMxYjJmNmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  },
+                  {
+                    "value": "No recent data",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyAxOGE0LjYgNC40IDAgMCAxIDAgLTlhNSA0LjUgMCAwIDEgMTEgMmgxYTMuNSAzLjUgMCAwIDEgMCA3IiAvPjxwYXRoIGQ9Ik0xMSAxM3YybTAgM3YybTQgLTV2Mm0wIDN2MiIgLz48L2c+PC9zdmc+",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  }
+                ]
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "status",
+              "type": "enum"
+            },
+            {
+              "name": "chartCsv",
+              "type": "hidden"
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-overflows",
+          "type": "sw-overflows",
+          "name": "Sewer overflows",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "forceProxy": false,
+          "refreshInterval": 1800,
+          "isOpenInWorkbench": false,
+          "description": "**Full title:** Sewer overflows (Scottish Water, live)\n\nCombined sewer overflows (CSOs) and other overflows in the catchment, from Scottish Water's near-real-time overflow monitoring. Scottish Water updates the feed about every hour; this layer checks every 30 minutes. A monitor shows an overflow has probably happened; it does not confirm it or say how much was spilled.\n\nSource: Scottish Water, open data.",
+          "attribution": "Overflow data: Scottish Water (open data).",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                "height": 36,
+                "width": 36,
+                "pixelOffset": [
+                  0,
+                  -18
+                ]
+              },
+              "mapType": "enum",
+              "column": "status",
+              "enum": [
+                {
+                  "value": "Overflowing now",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiNlMDg5MmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                {
+                  "value": "Recent overflow",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiNmMmM0NmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                  "height": 33,
+                  "width": 33,
+                  "pixelOffset": [
+                    0,
+                    -17
+                  ]
+                },
+                {
+                  "value": "No overflows",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMyZjZmOWYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                  "height": 29,
+                  "width": 29,
+                  "pixelOffset": [
+                    0,
+                    -15
+                  ]
+                },
+                {
+                  "value": "No data available",
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                  "height": 29,
+                  "width": 29,
+                  "pixelOffset": [
+                    0,
+                    -15
+                  ]
+                }
+              ]
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "activeStyle": "status",
+          "styles": [
+            {
+              "id": "status",
+              "title": "Overflow status",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                "mapType": "enum",
+                "column": "status",
+                "enum": [
+                  {
+                    "value": "Overflowing now",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiNlMDg5MmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                    "height": 36,
+                    "width": 36,
+                    "pixelOffset": [
+                      0,
+                      -18
+                    ]
+                  },
+                  {
+                    "value": "Recent overflow",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiNmMmM0NmIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                    "height": 33,
+                    "width": 33,
+                    "pixelOffset": [
+                      0,
+                      -17
+                    ]
+                  },
+                  {
+                    "value": "No overflows",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiMyZjZmOWYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                    "height": 29,
+                    "width": 29,
+                    "pixelOffset": [
+                      0,
+                      -15
+                    ]
+                  },
+                  {
+                    "value": "No data available",
+                    "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM4YTk0OWMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNC4wNzIgMjAuM2EyLjk5OSAyLjk5OSAwIDAgMCAzLjg1NiAwYTMuMDAyIDMuMDAyIDAgMCAwIC42NyAtMy43OThsLTIuMDk1IC0zLjIyN2EuNiAuNiAwIDAgMCAtMS4wMDUgMGwtMi4wOTggMy4yMjdhMy4wMDMgMy4wMDMgMCAwIDAgLjY3MSAzLjc5OHoiIC8+PHBhdGggZD0iTTE2LjA3MiAyMC4zYTIuOTk5IDIuOTk5IDAgMCAwIDMuODU2IDBhMy4wMDIgMy4wMDIgMCAwIDAgLjY3IC0zLjc5OGwtMi4wOTUgLTMuMjI3YS42IC42IDAgMCAwIC0xLjAwNSAwbC0yLjA5OCAzLjIyN2EzLjAwMyAzLjAwMyAwIDAgMCAuNjcxIDMuNzk4eiIgLz48cGF0aCBkPSJNMTAuMDcyIDEwLjNhMi45OTkgMi45OTkgMCAwIDAgMy44NTYgMGEzLjAwMiAzLjAwMiAwIDAgMCAuNjcgLTMuNzk4bC0yLjA5NSAtMy4yMjdhLjYgLjYgMCAwIDAgLTEuMDA1IDBsLTIuMDk4IDMuMjI3YTMuMDAzIDMuMDAzIDAgMCAwIC42NzEgMy43OTh6IiAvPjwvZz48L3N2Zz4=",
+                    "height": 29,
+                    "width": 29,
+                    "pixelOffset": [
+                      0,
+                      -15
+                    ]
+                  }
+                ]
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "status",
+              "type": "enum"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{name}}\n\n**{{status}}**{{#noDataReason}} ({{noDataReason}}){{/noDataReason}}  \n{{overflowType}} into **{{receivingWater}}**\n\n| | |\n|---|---|\n| Latest overflow | {{lastStart}} to {{lastEnd}} ({{lastDuration}}) |\n| Overflow before that | {{previousStart}} ({{previousDuration}}) |\n| Total overflow time, past 48 hours | {{past48h}} |\n| Rainfall, past 48 hours | {{rainfall48h}} mm |\n| Monitor last reported | {{lastReport}} |\n| Investment priority | {{investmentPriority}} ({{investmentDrivers}}) |\n\nAsset {{assetId}}, licence {{licence}}, grid reference {{gridReference}}.\n\nSource: Scottish Water near-real-time overflow data."
+          },
+          "overflowsUrl": "data/live/sw-overflows.json"
+        },
+        {
+          "id": "almond-senseh2o",
+          "type": "sensorthings",
+          "name": "Environmental sensors",
+          "sensorThingsUrl": "http://localhost:3003/sta",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "refreshInterval": 1800,
+          "isOpenInWorkbench": false,
+          "unreachableHelp": "The SIEC sensor server could not be reached. If you are signed in, try again later; otherwise use Sign in for sensor data at the top of the map.",
+          "description": "**Full title:** SenseH2O / Forth-ERA sensors (live)\n\nLive sensors from the SIEC Forth-ERA network (the data behind the SenseH2O app) in and around the Almond catchment, read through a small helper on this computer that signs in to SIEC. Readings from the last 7 days are averaged by hour. Pick a parameter under Display Variable to colour every site by its value, and use the time slider to step through the hours. A light grey circle means that site has no reading for that parameter in that hour. Click a site to see all of its parameters, each with a chart of the week's readings. Battery and signal readings are left out. Monthly MOT sampling results are in their own layer under River health and pressures. For interactive charts and comparisons between sites, use the [sensor explorer](sensors/).",
+          "attribution": "Sensor data: SIEC Forth-ERA (Scotland's International Environment Centre).",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "point",
+                "height": 16,
+                "width": 16
+              }
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#c8cdd2"
+            },
+            "time": {
+              "timeColumn": "month",
+              "endTimeColumn": "monthEnd",
+              "idColumns": [
+                "thingId"
+              ]
+            },
+            "outline": {
+              "null": {
+                "color": "#22282e",
+                "width": 1.5
+              }
+            }
+          },
+          "columns": [
+            {
+              "name": "name",
+              "type": "hidden"
+            },
+            {
+              "name": "thingId",
+              "type": "hidden"
+            },
+            {
+              "name": "month",
+              "type": "hidden",
+              "title": "Hour"
+            },
+            {
+              "name": "monthEnd",
+              "type": "hidden"
+            },
+            {
+              "name": "monthLabel",
+              "type": "hidden"
+            },
+            {
+              "name": "lastReading",
+              "type": "hidden"
+            },
+            {
+              "name": "readingsTable",
+              "type": "hidden"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{name}}\n\n**{{monthLabel}}** (hourly average)\n\n**[Open this site in the sensor explorer](sensors/#site={{thingId}})** for interactive charts, comparisons between sites and longer time ranges.\n\n{{{readingsTable}}}\n\n#### Readings over the last 7 days\n\nOpen a parameter to see its chart. **Expand** opens it in the chart panel below the map, where you can add the same parameter from other sites to compare.\n\n{{{siteCharts}}}\n\nSource: SIEC Forth-ERA SensorThings."
+          },
+          "historyDays": 7,
+          "historyStep": "hour",
+          "thingsFilter": "st_intersects(Locations/location,geography'POLYGON((-3.86 55.74,-3.24 55.74,-3.24 56.0,-3.86 56.0,-3.86 55.74))')",
+          "datastreamsFilter": "not startswith(name,'MOT')",
+          "excludeDatastreams": "^MOT",
+          "excludeParameters": "^Ancillary",
+          "defaultParameter": "River Level",
+          "initialTimeSource": "stop",
+          "dateFormat": "ddd d mmm yyyy, HH:MM"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "River health and pressures",
+      "description": "SEPA classification of the river's health and the pressures on it.",
+      "members": [
+        {
+          "id": "almond-zones",
+          "type": "river-zones",
+          "name": "River health zones",
+          "url": "data/almond/zones.geojson",
+          "refreshInterval": 900,
+          "description": "**Full title:** River health zones (live)\n\nThe river split into three stretches, Upper, Middle and Lower Almond. Each is rated Red, Amber or Green every 15 minutes from the live flow at its SEPA gauge compared with that gauge's own long-term record: Green is a normal flow, Amber is low or high, Red is very low (drought stress) or very high (flood). Click a zone for its ecological health, pressures, and what you can do.\n\nThere is no live water-quality feed for the Almond in SEPA's open services, so this rating is about flow only.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "opacity": 0.35,
+          "defaultStyle": {
+            "outline": {
+              "null": {
+                "color": "#ffffff",
+                "width": 2
+              }
+            },
+            "label": {
+              "enabled": false
+            }
+          },
+          "activeStyle": "rag",
+          "styles": [
+            {
+              "id": "rag",
+              "title": "Flow condition right now",
+              "color": {
+                "colorColumn": "rag",
+                "enumColors": [
+                  {
+                    "value": "Green",
+                    "color": "#1a9850"
+                  },
+                  {
+                    "value": "Amber",
+                    "color": "#fdae61"
+                  },
+                  {
+                    "value": "Red",
+                    "color": "#d73027"
+                  },
+                  {
+                    "value": "Grey",
+                    "color": "#9e9e9e"
+                  }
+                ]
+              }
+            }
+          ],
+          "columns": [
+            {
+              "name": "rag",
+              "type": "enum"
+            },
+            {
+              "name": "chartCsv",
+              "type": "hidden"
+            },
+            {
+              "name": "flow_ts_id",
+              "type": "hidden"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{zone}}\n*{{places}}*\n\n**Flow right now: {{condition}}** ({{rag}})  \n{{latestFlow}} m³/s at {{gauge_name}} gauge, {{latestTime}}, which is {{percentOfMedian}}% of the usual (median) flow.\n\n**Ecological health: {{health}}**, {{healthText}} ({{poor}} of {{water_bodies}} SEPA water bodies at poor status, {{good}} good).\n\n<chart title=\"{{zone}}: flow at {{gauge_name}} (last 2 days)\" id=\"zone-{{gauge}}\">\n{{{chartCsv}}}\n</chart>\n\n<collapsible title=\"Did you know?\" open=\"true\">\n\n- This stretch drains **{{area_km2}} km²** of land, and every drain, field and road in it ends up in me.\n- There are **{{barriers}} recorded obstacles to fish passage** here, such as weirs and culverts.\n- SEPA has **{{permits}} water permits** in this stretch, **{{sewage_permits}}** of them for sewage discharges or overflows.\n- My flow here is usually between **{{flow_q70}}** and **{{flow_q30}}** m³/s. It drops below **{{flow_q95}}** only 5% of the time and goes above **{{flow_q10}}** 10% of the time.\n\n</collapsible>\n\n<collapsible title=\"Find out more\">\n\n- [Live level and flow at {{gauge_name}} (SEPA)](https://www2.sepa.org.uk/waterlevels/default.aspx?sd=t&lc={{gauge}})\n- [SEPA water classification hub](https://informatics.sepa.org.uk/WaterClassificationHub/)\n- [SEPA Floodline: flood alerts and warnings](https://floodline.sepa.org.uk/)\n- Turn on *Discharge and engineering permits* and *Obstacles to fish passage* to see the pressures on this stretch.\n\n</collapsible>\n\n<collapsible title=\"What you can do\">\n\n- Only rain down the drain: no oil, paint or soapy car-wash water in street drains.\n- Bin wipes, cotton buds and fats instead of flushing them. They cause sewer blockages and overflows.\n- Seen pollution, a dead fish or an odd colour? Report it to SEPA (0800 80 70 60, 24 hours), and use **Report what you see** on this map.\n- Sign up for SEPA Floodline alerts if you live or work near me.\n\n</collapsible>"
+          },
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-mot-sampling",
+          "type": "sensorthings",
+          "name": "MOT4Rivers data",
+          "sensorThingsUrl": "http://localhost:3003/sta",
+          "boundaryUrl": "data/almond/catchment.geojson",
+          "refreshInterval": 21600,
+          "isOpenInWorkbench": false,
+          "unreachableHelp": "The SIEC sensor server could not be reached. If you are signed in, try again later; otherwise use Sign in for sensor data at the top of the map.",
+          "description": "**Full title:** Monthly water sampling (Forth-ERA MOT)\n\nMonthly water-quality sampling results (the MOT datastreams in the SIEC Forth-ERA SensorThings service). These are periodic samples, not live sensors. Pick a parameter under Display Variable to colour every site by its result, and use the time slider to step through the months (the last 24 months are loaded). A light grey circle means that site has no result for that parameter in that month. Read through the same local helper as the live SenseH2O sensors. Click a site to see all of its parameters, each with a chart of its results over time. For interactive charts and comparisons between sites, use the [sensor explorer](sensors/).",
+          "attribution": "Sensor data: SIEC Forth-ERA (Scotland's International Environment Centre).",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "point",
+                "height": 16,
+                "width": 16
+              }
+            },
+            "label": {
+              "enabled": false
+            },
+            "color": {
+              "nullColor": "#c8cdd2"
+            },
+            "time": {
+              "timeColumn": "month",
+              "endTimeColumn": "monthEnd",
+              "idColumns": [
+                "thingId"
+              ]
+            },
+            "outline": {
+              "null": {
+                "color": "#22282e",
+                "width": 1.5
+              }
+            }
+          },
+          "columns": [
+            {
+              "name": "name",
+              "type": "hidden"
+            },
+            {
+              "name": "thingId",
+              "type": "hidden"
+            },
+            {
+              "name": "month",
+              "type": "hidden",
+              "title": "Month"
+            },
+            {
+              "name": "monthEnd",
+              "type": "hidden"
+            },
+            {
+              "name": "monthLabel",
+              "type": "hidden"
+            },
+            {
+              "name": "lastReading",
+              "type": "hidden"
+            },
+            {
+              "name": "readingsTable",
+              "type": "hidden"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{name}}\n\n**{{monthLabel}}** sampling results\n\n**[Open this site in the sensor explorer](sensors/#site={{thingId}})** for interactive charts, comparisons between sites and longer time ranges.\n\n{{{readingsTable}}}\n\n#### Results over time\n\nOpen a parameter to see its chart. **Expand** opens it in the chart panel below the map, where you can add the same parameter from other sites to compare.\n\n{{{siteCharts}}}\n\nMonthly sampling. Source: SIEC Forth-ERA SensorThings."
+          },
+          "includeDatastreams": "^MOT",
+          "isSampling": true,
+          "historyMonths": 24,
+          "thingsFilter": "startswith(Datastreams/name,'MOT')",
+          "datastreamsFilter": "startswith(name,'MOT')",
+          "defaultParameter": "coli",
+          "initialTimeSource": "stop",
+          "dateFormat": "mmmm yyyy"
+        },
+        {
+          "id": "almond-rivers",
+          "type": "geojson",
+          "name": "WFD classification",
+          "url": "data/almond/rivers.geojson",
+          "description": "**Full title:** Rivers (WFD water bodies, 2024 status)\n\nSEPA river water bodies in the catchment, coloured by their overall Water Framework Directive classification.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "outline": {
+              "null": {
+                "width": 3
+              }
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{water_body_name}}\n\n**Overall status ({{classification_year}}):** {{overall_classification}} ({{certainty_band}} certainty)  \nLength: {{length_km}} km  \nHeavily modified: {{heavily_modified}}\n\n[SEPA classification sheet]({{class_ds_url}})"
+          },
+          "activeStyle": "overall_classification",
+          "styles": [
+            {
+              "id": "overall_classification",
+              "title": "Overall classification",
+              "color": {
+                "colorColumn": "overall_classification",
+                "enumColors": [
+                  {
+                    "value": "High",
+                    "color": "#1a9850"
+                  },
+                  {
+                    "value": "Good",
+                    "color": "#66bd63"
+                  },
+                  {
+                    "value": "Good ecological potential",
+                    "color": "#66bd63"
+                  },
+                  {
+                    "value": "Moderate",
+                    "color": "#fee08b"
+                  },
+                  {
+                    "value": "Moderate ecological potential",
+                    "color": "#fee08b"
+                  },
+                  {
+                    "value": "Poor",
+                    "color": "#f46d43"
+                  },
+                  {
+                    "value": "Poor ecological potential",
+                    "color": "#f46d43"
+                  },
+                  {
+                    "value": "Bad",
+                    "color": "#a50026"
+                  },
+                  {
+                    "value": "Bad ecological potential",
+                    "color": "#a50026"
+                  }
+                ],
+                "nullColor": "#3a7bd5"
+              }
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-subcatchments",
+          "type": "geojson",
+          "name": "Sub-catchments (by water body status)",
+          "url": "data/almond/subcatchments.geojson",
+          "description": "The land draining to each river water body, coloured by that water body's WFD status.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "opacity": 0.45,
+          "defaultStyle": {
+            "outline": {
+              "null": {
+                "color": "#555555",
+                "width": 1
+              }
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{wb_name}}\n\nDraining area: {{area_km2}} km²  \nWater body status: {{overall_classification}}"
+          },
+          "activeStyle": "overall_classification",
+          "styles": [
+            {
+              "id": "overall_classification",
+              "title": "Overall classification",
+              "color": {
+                "colorColumn": "overall_classification",
+                "enumColors": [
+                  {
+                    "value": "High",
+                    "color": "#1a9850"
+                  },
+                  {
+                    "value": "Good",
+                    "color": "#66bd63"
+                  },
+                  {
+                    "value": "Good ecological potential",
+                    "color": "#66bd63"
+                  },
+                  {
+                    "value": "Moderate",
+                    "color": "#fee08b"
+                  },
+                  {
+                    "value": "Moderate ecological potential",
+                    "color": "#fee08b"
+                  },
+                  {
+                    "value": "Poor",
+                    "color": "#f46d43"
+                  },
+                  {
+                    "value": "Poor ecological potential",
+                    "color": "#f46d43"
+                  },
+                  {
+                    "value": "Bad",
+                    "color": "#a50026"
+                  },
+                  {
+                    "value": "Bad ecological potential",
+                    "color": "#a50026"
+                  }
+                ],
+                "nullColor": "#cccccc"
+              }
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-permits",
+          "type": "geojson",
+          "name": "Discharge and engineering permits (SEPA)",
+          "url": "data/almond/permits.geojson",
+          "description": "Water environment authorisations (CAR licences) granted by SEPA inside the catchment: sewage treatment works and overflows, surface-water and industrial discharges, abstractions, and river engineering. Positions are SEPA's representative grid references. Snapshot from SEPA's open Water permits layer; re-run scripts/almond/build_static_data.py to refresh.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTdhN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgM3Y0YTEgMSAwIDAgMCAxIDFoNCIgLz48cGF0aCBkPSJNNSA4di0zYTIgMiAwIDAgMSAyIC0yaDdsNSA1djExYTIgMiAwIDAgMSAtMiAyaC01IiAvPjxwYXRoIGQ9Ik02IDE0bS0zIDBhMyAzIDAgMSAwIDYgMGEzIDMgMCAxIDAgLTYgMCIgLz48cGF0aCBkPSJNNC41IDE3bC0xLjUgNWwzIC0xLjVsMyAxLjVsLTEuNSAtNSIgLz48L2c+PC9zdmc+",
+                "height": 27,
+                "width": 27,
+                "pixelOffset": [
+                  0,
+                  -14
+                ]
+              },
+              "mapType": "enum",
+              "column": "category",
+              "enum": []
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "activeStyle": "category",
+          "styles": [
+            {
+              "id": "category",
+              "title": "Permit type",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTdhN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgM3Y0YTEgMSAwIDAgMCAxIDFoNCIgLz48cGF0aCBkPSJNNSA4di0zYTIgMiAwIDAgMSAyIC0yaDdsNSA1djExYTIgMiAwIDAgMSAtMiAyaC01IiAvPjxwYXRoIGQ9Ik02IDE0bS0zIDBhMyAzIDAgMSAwIDYgMGEzIDMgMCAxIDAgLTYgMCIgLz48cGF0aCBkPSJNNC41IDE3bC0xLjUgNWwzIC0xLjVsMyAxLjVsLTEuNSAtNSIgLz48L2c+PC9zdmc+",
+                  "height": 27,
+                  "width": 27,
+                  "pixelOffset": [
+                    0,
+                    -14
+                  ]
+                },
+                "mapType": "enum",
+                "column": "category",
+                "enum": []
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "category",
+              "type": "enum"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{category}}\n\n**Activity:** {{activity}}  \n**Holder:** {{holder}}  \n**Licence:** {{licence}} ({{reference}})\n\n{{description}}"
+          },
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-fish-obstacles",
+          "type": "geojson",
+          "name": "Obstacles to fish passage",
+          "url": "data/almond/fish-obstacles.geojson",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "description": "Weirs, culverts and other barriers recorded by SEPA, coloured by how passable they are.",
+          "defaultStyle": {
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTZhNTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTYuNjkgNy40NGE2Ljk3MyA2Ljk3MyAwIDAgMCAtMS42OSA0LjU2YzAgMS43NDcgLjY0IDMuMzQ1IDEuNjk5IDQuNTcxIiAvPjxwYXRoIGQ9Ik0yIDkuNTA0YzcuNzE1IDguNjQ3IDE0Ljc1IDEwLjI2NSAyMCAyLjQ5OGMtNS4yNSAtNy43NjEgLTEyLjI4NSAtNi4xNDIgLTIwIDIuNTA0IiAvPjxwYXRoIGQ9Ik0xOCAxMXYuMDEiIC8+PHBhdGggZD0iTTExLjUgMTAuNWMtLjY2NyAxIC0uNjY3IDIgMCAzIiAvPjwvZz48L3N2Zz4=",
+                "height": 27,
+                "width": 27,
+                "pixelOffset": [
+                  0,
+                  -14
+                ]
+              }
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{barrier_type}}\n\nWater body: {{wb_name}}  \nPermeability: {{barrier_permeability}}  \nDownstream passability: {{downstream_passability}}\n\n{{description}}"
+          },
+          "activeStyle": "obstacle",
+          "styles": [
+            {
+              "id": "obstacle",
+              "title": "Obstacle to fish passage",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM3YTZhNTMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTYuNjkgNy40NGE2Ljk3MyA2Ljk3MyAwIDAgMCAtMS42OSA0LjU2YzAgMS43NDcgLjY0IDMuMzQ1IDEuNjk5IDQuNTcxIiAvPjxwYXRoIGQ9Ik0yIDkuNTA0YzcuNzE1IDguNjQ3IDE0Ljc1IDEwLjI2NSAyMCAyLjQ5OGMtNS4yNSAtNy43NjEgLTEyLjI4NSAtNi4xNDIgLTIwIDIuNTA0IiAvPjxwYXRoIGQ9Ik0xOCAxMXYuMDEiIC8+PHBhdGggZD0iTTExLjUgMTAuNWMtLjY2NyAxIC0uNjY3IDIgMCAzIiAvPjwvZz48L3N2Zz4=",
+                  "height": 27,
+                  "width": 27,
+                  "pixelOffset": [
+                    0,
+                    -14
+                  ]
+                }
+              },
+              "hidden": false
+            }
+          ],
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-rmi",
+          "type": "esri-mapServer",
+          "name": "River modification index",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/River_Morphology/MapServer/1",
+          "opacity": 0.9,
+          "description": "SEPA's index of how much each river reach has been physically modified.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-recovery",
+          "type": "esri-mapServer",
+          "name": "River recovery potential",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/River_Morphology/MapServer/0",
+          "opacity": 0.9,
+          "description": "Potential for each reach to recover naturally.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-riparian",
+          "type": "esri-mapServer",
+          "name": "Recommended riparian corridor",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/River_Morphology/MapServer/4",
+          "opacity": 0.5,
+          "description": "Recommended river corridor for riparian planting and natural flood management.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "Flood risk",
+      "description": "SEPA flood maps. Zoom in to a town to see them.",
+      "members": [
+        {
+          "id": "almond-flood-warning-areas",
+          "type": "geojson",
+          "name": "SEPA flood warning and alert areas",
+          "url": "data/almond/flood-warning-areas.geojson",
+          "isOpenInWorkbench": false,
+          "description": "The areas SEPA issues flood alerts (regional, early notice) and flood warnings (local, flooding expected) for. This layer shows the areas only, not whether a warning is in force: SEPA's live warnings feed needs an access request, so for live warnings check [SEPA Floodline](https://floodline.sepa.org.uk/live-flood-information/) or call Floodline on 0345 988 1188 with the quickdial code.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "opacity": 0.5,
+          "activeStyle": "kind",
+          "styles": [
+            {
+              "id": "kind",
+              "title": "Area type",
+              "color": {
+                "colorColumn": "kind",
+                "enumColors": [
+                  {
+                    "value": "Flood warning area",
+                    "color": "#d7301f"
+                  },
+                  {
+                    "value": "Flood alert area",
+                    "color": "#fdbb84"
+                  }
+                ]
+              }
+            }
+          ],
+          "columns": [
+            {
+              "name": "kind",
+              "type": "enum"
+            }
+          ],
+          "defaultStyle": {
+            "outline": {
+              "null": {
+                "color": "#7f2704",
+                "width": 1.5
+              }
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{name}}\n\n**{{kind}}**{{#source}} ({{source}} flooding){{/source}}\n\nFloodline quickdial code: **{{quickdial}}** (call 0345 988 1188).\n\n[Live flood alerts and warnings on SEPA Floodline](https://floodline.sepa.org.uk/live-flood-information/)"
+          }
+        },
+        {
+          "id": "almond-rf-high",
+          "type": "esri-mapServer",
+          "name": "River flooding: high likelihood (10% annual chance)",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Flood_Maps/MapServer/0",
+          "opacity": 0.6,
+          "description": "Areas with a 10% chance of river flooding each year (1 in 10).",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-rf-med",
+          "type": "esri-mapServer",
+          "name": "River flooding: medium likelihood (0.5% annual chance)",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Flood_Maps/MapServer/1",
+          "opacity": 0.6,
+          "description": "Areas with a 0.5% chance of river flooding each year (1 in 200).",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-rf-low",
+          "type": "esri-mapServer",
+          "name": "River flooding: low likelihood (0.1% annual chance)",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Flood_Maps/MapServer/2",
+          "opacity": 0.6,
+          "description": "Areas with a 0.1% chance of river flooding each year (1 in 1000).",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-sw-med",
+          "type": "esri-mapServer",
+          "name": "Surface water flooding: medium likelihood",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Flood_Maps/MapServer/4",
+          "opacity": 0.6,
+          "description": "Surface water and small watercourse flooding, 0.5% annual chance.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-future-river",
+          "type": "esri-mapServer",
+          "name": "Future river flooding (climate change, medium likelihood)",
+          "url": "https://map.sepa.org.uk/server/rest/services/Open/Flood_Maps/MapServer/9",
+          "opacity": 0.6,
+          "description": "Projected 0.5% annual chance river flood extent with climate change uplift.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "isOpenInWorkbench": false
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "History",
+      "description": "Past records with a time slider.",
+      "members": [
+        {
+          "id": "almond-daily-flows",
+          "type": "csv",
+          "name": "Daily flows over the past year (time slider)",
+          "url": "data/almond/daily-flows.csv",
+          "description": "Daily mean river flow at each SEPA gauge for the past year. Use the time slider at the bottom of the map to play through the seasons; each gauge is coloured by its flow as a percentage of its long-term median daily flow. Snapshot; re-run scripts/almond/build_static_data.py to refresh.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "time": {
+              "timeColumn": "date",
+              "idColumns": [
+                "station_no"
+              ]
+            },
+            "point": {
+              "null": {
+                "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTcgMTBoNHY0IiAvPjxwYXRoIGQ9Ik0zIDEyYy44ODcgLTEuMjg0IDIuNDggLTIuMDMzIDQgLTJjMS41MiAtLjAzMyAzLjExMyAuNzE2IDQgMnMyLjQ4IDIuMDMzIDQgMmMxLjUyIC4wMzMgMyAtMSA0IC0ybDIgLTIiIC8+PC9nPjwvc3ZnPg==",
+                "height": 36,
+                "width": 36,
+                "pixelOffset": [
+                  0,
+                  -18
+                ]
+              },
+              "mapType": "enum",
+              "column": "percent_of_median",
+              "enum": []
+            },
+            "color": {
+              "nullColor": "#ffffff"
+            }
+          },
+          "activeStyle": "percent_of_median",
+          "styles": [
+            {
+              "id": "percent_of_median",
+              "title": "Flow as % of median",
+              "color": {
+                "nullColor": "#ffffff"
+              },
+              "point": {
+                "null": {
+                  "marker": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZWxsaXBzZSBjeD0iMjAiIGN5PSIzOC4yIiByeD0iNSIgcnk9IjEuNiIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iLjMiLz48cGF0aCBkPSJNMjAgMzhDMjAgMzggOCAyNC41IDggMTVhMTIgMTIgMCAwIDEgMjQgMGMwIDkuNS0xMiAyMy0xMiAyM3oiIGZpbGw9IiM2YjczN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuOCA3LjgpIHNjYWxlKC42KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTcgMTBoNHY0IiAvPjxwYXRoIGQ9Ik0zIDEyYy44ODcgLTEuMjg0IDIuNDggLTIuMDMzIDQgLTJjMS41MiAtLjAzMyAzLjExMyAuNzE2IDQgMnMyLjQ4IDIuMDMzIDQgMmMxLjUyIC4wMzMgMyAtMSA0IC0ybDIgLTIiIC8+PC9nPjwvc3ZnPg==",
+                  "height": 36,
+                  "width": 36,
+                  "pixelOffset": [
+                    0,
+                    -18
+                  ]
+                },
+                "mapType": "enum",
+                "column": "percent_of_median",
+                "enum": []
+              },
+              "hidden": false
+            }
+          ],
+          "columns": [
+            {
+              "name": "lat",
+              "type": "latitude"
+            },
+            {
+              "name": "lon",
+              "type": "longitude"
+            },
+            {
+              "name": "percent_of_median",
+              "title": "Flow as % of median",
+              "type": "scalar"
+            },
+            {
+              "name": "flow_m3s",
+              "title": "Flow (m³/s)",
+              "type": "scalar"
+            }
+          ],
+          "featureInfoTemplate": {
+            "template": "### {{station}}\n\n**{{date}}:** {{flow_m3s}} m³/s, {{percent_of_median}}% of its usual (median) daily flow."
+          },
+          "isOpenInWorkbench": false
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "Catchment and context",
+      "description": "The catchment outline, lochs and 3D buildings.",
+      "members": [
+        {
+          "id": "almond-boundary",
+          "type": "geojson",
+          "name": "Catchment boundary",
+          "url": "data/almond/catchment.geojson",
+          "description": "The River Almond catchment (SEPA main river catchment 61), about 385 km² from the Harthill and Cobbinshaw uplands to the Firth of Forth at Cramond.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "color": {
+              "nullColor": "rgba(0,0,0,0)"
+            },
+            "outline": {
+              "null": {
+                "color": "#0b3d91",
+                "width": 3
+              }
+            }
+          },
+          "featureInfoTemplate": {
+            "template": "### {{catchment_name}}\n\nArea: {{area_km2}} km²  \nPerimeter: {{perimeter_km}} km  \nSource: {{source}}"
+          },
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-lochs",
+          "type": "geojson",
+          "name": "Lochs and reservoirs",
+          "url": "data/almond/lochs.geojson",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. All rights reserved. Licensed under the Open Government Licence v3.0.",
+          "defaultStyle": {
+            "color": {
+              "nullColor": "#4fa3e0"
+            },
+            "outline": {
+              "null": {
+                "color": "#0b3d91",
+                "width": 1
+              }
+            }
+          },
+          "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-osm-buildings",
+          "type": "3d-tiles",
+          "name": "3D buildings (Cesium OSM Buildings)",
+          "ionAssetId": 96188,
+          "description": "OpenStreetMap buildings in 3D, served by Cesium ion. Terrain comes from Cesium World Terrain in 3D mode.",
+          "isOpenInWorkbench": false
+        }
+      ]
+    }
+  ],
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-bing-aerial",
+    "items": [
+      {
+        "item": {
+          "id": "basemap-light-grey-esri",
+          "name": "Light grey (Esri)",
+          "type": "esri-mapServer",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+          "attribution": "Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community",
+          "opacity": 1
+        },
+        "image": "images/basemaps/light-grey-esri.png",
+        "contrastColor": "#000000"
+      },
+      {
+        "item": {
+          "id": "basemap-light-grey-esri-labels",
+          "name": "Light grey with labels (Esri)",
+          "type": "composite",
+          "members": [
+            {
+              "id": "basemap-light-grey-esri-labels/labels",
+              "name": "Labels (Esri)",
+              "type": "esri-mapServer",
+              "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer",
+              "opacity": 1
+            },
+            {
+              "id": "basemap-light-grey-esri-labels/base",
+              "name": "Light grey (Esri)",
+              "type": "esri-mapServer",
+              "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+              "attribution": "Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community",
+              "opacity": 1
+            }
+          ]
+        },
+        "image": "images/basemaps/light-grey-esri-labels.png",
+        "contrastColor": "#000000"
+      },
+      {
+        "item": {
+          "id": "basemap-light-grey-positron",
+          "name": "Light grey (CARTO Positron, OpenStreetMap)",
+          "type": "url-template-imagery",
+          "url": "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+          "subdomains": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "maximumLevel": 19,
+          "attribution": "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a> © <a href='https://carto.com/attributions'>CARTO</a>",
+          "opacity": 1
+        },
+        "image": "images/basemaps/light-grey-positron.png",
+        "contrastColor": "#000000"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "id": "almond-1",
+      "title": "Hi, I'm the River Almond",
+      "text": "<p><strong>Hi, I'm the River Almond.</strong> I start as small burns on the moors near Harthill and Cobbinshaw and flow east past Whitburn, Livingston and Kirkliston, to meet the Firth of Forth at Cramond.</p><p>About 385 km² of land drains into me. The dark blue line is my catchment: every drop of rain that falls inside it ends up in me.</p><p>Let's follow Jenna, who lives in Livingston and loves paddleboarding and walking her dog along my banks.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-rivers"
+            ],
+            "initialCamera": {
+              "west": -3.86,
+              "south": 55.74,
+              "east": -3.24,
+              "north": 55.995
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-2",
+      "title": "How I'm feeling today",
+      "text": "<p>These dots are my live gauges. SEPA measures my <strong>level</strong>, and the rainfall on my catchment, every 15 minutes.</p><p>Blue means I'm at a normal level. Orange and red mean I'm rising towards the kind of peak I usually reach about once a year.</p><p>The shaded areas are my three stretches, Upper, Middle and Lower. Each is coloured by how I'm flowing there right now: <strong>green</strong> is normal, <strong>amber</strong> is low or high, <strong>red</strong> is very low or very high.</p><p><em>Click a stretch or any gauge</em> to see my last 7 days as a chart.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-zones",
+              "almond-rivers",
+              "almond-levels",
+              "almond-rain"
+            ],
+            "initialCamera": {
+              "west": -3.86,
+              "south": 55.74,
+              "east": -3.24,
+              "north": 55.995
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-3",
+      "title": "Jenna checks on me in Livingston",
+      "text": "<p>Jenna wants to paddle near Almondell this weekend. For her, two things matter: <strong>how fast I'm flowing</strong> and <strong>how clear I am</strong>.</p><p>The Almondell gauge, just downstream of Livingston, tells her whether I'm sluggish, steady or running high. After heavy rain I can rise quickly here, so it's worth checking before she gets in.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-rivers",
+              "almond-levels",
+              "almond-flows"
+            ],
+            "initialCamera": {
+              "west": -3.62,
+              "south": 55.86,
+              "east": -3.38,
+              "north": 55.94
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-4",
+      "title": "What's building up inside me",
+      "text": "<p>Today Jenna notices I look murky, and wants to know why.</p><p>SEPA checks the health of each stretch of river. In 2024, <strong>18 of my 20 stretches were rated Poor</strong>; only 2 were Good. The colours on the map show each stretch and the land that drains into it.</p><p>One of the things that can hold me back is <strong>phosphorus</strong>. It comes from treated and untreated wastewater, from farmland after heavy rain, and from everyday products washed down drains. Too much of it feeds algae, which clouds my water and uses up oxygen my fish need.</p><p>The small dots are SEPA water permits. The dark red ones are public sewage treatment works and overflows.</p><p><em>Click a stretch</em> to open SEPA's classification sheet for it, or a dot to see what the permit is for.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-subcatchments",
+              "almond-rivers",
+              "almond-permits"
+            ],
+            "initialCamera": {
+              "west": -3.86,
+              "south": 55.74,
+              "east": -3.24,
+              "north": 55.995
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-5",
+      "title": "When it rains hard",
+      "text": "<p>When heavy rain falls on my catchment, I can burst my banks.</p><p>The blue areas are SEPA's flood maps: dark blue has a 1 in 10 chance of flooding each year, lighter blue a 1 in 200 chance. Here in Livingston and Mid Calder, the land closest to me is the first to flood.</p><p>Heavy rain can also overwhelm sewers, which then spill into me through overflows. That's one reason my water quality can drop after a storm.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-rf-med",
+              "almond-rf-high",
+              "almond-rivers",
+              "almond-levels"
+            ],
+            "initialCamera": {
+              "west": -3.56,
+              "south": 55.875,
+              "east": -3.47,
+              "north": 55.915
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-6",
+      "title": "Barriers in my way",
+      "text": "<p>Salmon and sea trout need to swim up and down me, but weirs, culverts and bridges get in the way. SEPA records <strong>66 obstacles to fish passage</strong> in my catchment.</p><p>The coloured lines show how much each stretch has been physically changed by people (straightened, walled in or culverted). The more modified I am, the fewer places wildlife has to live.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-rmi",
+              "almond-fish-obstacles"
+            ],
+            "initialCamera": {
+              "west": -3.62,
+              "south": 55.86,
+              "east": -3.38,
+              "north": 55.96
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-7",
+      "title": "How you can help me",
+      "text": "<p>Jenna goes home knowing a bit more about me, and a few things she can do:</p><ul><li><strong>Only flush the 3Ps</strong> (pee, poo and paper). Wipes and fat block sewers and cause spills.</li><li><strong>Report pollution</strong>, odd colours or dead fish to SEPA on <strong>0800 80 70 60</strong>, any time.</li><li>Check your home's plumbing isn't <strong>misconnected</strong>, sending washing-machine water into a surface drain that leads straight to me.</li><li>Join a <strong>river clean-up or citizen science</strong> group with the Forth Rivers Trust.</li></ul><p>Thanks for spending time with me. Close this panel to explore the map yourself.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-rivers",
+              "almond-levels",
+              "almond-rain"
+            ],
+            "initialCamera": {
+              "west": -3.86,
+              "south": 55.74,
+              "east": -3.24,
+              "north": 55.995
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

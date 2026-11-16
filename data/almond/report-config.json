@@ -1,0 +1,4 @@
+{
+  "endpoint": null,
+  "_comment": "Set endpoint to a URL that accepts POSTed GeoJSON Features to collect reports centrally. Leave it null to keep reports in each visitor's own browser."
+}

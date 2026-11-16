@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64">
+  <title>Eye on the Almond</title>
+  <path d="M4 32c7-12 17-19 28-19s21 7 28 19c-7 12-17 19-28 19S11 44 4 32z" fill="#ffffff"/>
+  <circle cx="32" cy="32" r="12" fill="#2f6f9f"/>
+  <path d="M21 31c4-3 7 3 11 0s7 3 11 0" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M22.5 37c3.3-2.5 6.2 2.5 9.5 0s6.2 2.5 9.5 0" stroke="#f2a93b" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <text x="70" y="31" font-family="General Sans, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Eye on the Almond</text>
+  <text x="71" y="51" font-family="General Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#f5c56f" letter-spacing="1.5">RIVER ALMOND DIGITAL TWIN</text>
+</svg>

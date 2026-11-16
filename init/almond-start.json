@@ -1,0 +1,34 @@
+{
+  "_comment": "Start-up state, loaded after almond.json: which layers are on the map, the timeline, and which of them start switched off (user stratum, so the catalogue keeps its own defaults).",
+  "stratum": "user",
+  "workbench": [
+    "almond-overflows",
+    "almond-senseh2o",
+    "almond-levels",
+    "almond-rain",
+    "almond-zones",
+    "almond-mot-sampling",
+    "almond-rivers",
+    "almond-boundary"
+  ],
+  "timeline": [
+    "almond-senseh2o"
+  ],
+  "models": {
+    "almond-mot-sampling": {
+      "show": false
+    },
+    "almond-levels": {
+      "show": false
+    },
+    "almond-rain": {
+      "show": false
+    },
+    "almond-zones": {
+      "show": false
+    },
+    "almond-rivers": {
+      "show": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sensor explorer · Eye on the Almond</title>
+  <link rel="icon" href="../favicons/favicon-32x32.png" />
+  <link rel="stylesheet" href="vendor/leaflet.css" />
+  <link rel="stylesheet" href="sensors.css" />
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="../" title="Back to the map">
+      <img src="../images/almond-logo.svg" alt="Eye on the Almond" height="40" />
+    </a>
+    <span class="bar-title">Sensor explorer</span>
+    <span class="bar-status" id="status">Loading sites…</span>
+    <span class="bar-auth" id="auth" hidden></span>
+    <a class="bar-link" href="../">Back to the map</a>
+  </header>
+
+  <main class="layout">
+    <aside class="sites">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-kind="live" aria-selected="true">Live sensors</button>
+        <button role="tab" class="tab" data-kind="mot" aria-selected="false">Monthly sampling</button>
+      </div>
+      <input id="search" class="search" type="search" placeholder="Find a site or parameter" aria-label="Find a site or parameter" />
+      <label class="toggle"><input type="checkbox" id="outside" /> Include sites just outside the catchment</label>
+      <ul id="site-list" class="site-list" aria-label="Sites"></ul>
+      <div id="map" class="map" aria-label="Map of sites"></div>
+    </aside>
+
+    <section class="detail">
+      <div id="site-empty" class="empty">
+        <h2>Pick a site</h2>
+        <p>Choose a site from the list or the map to see what it measures, then tick parameters to chart them. Ticked parameters stay on the chart when you move to another site, so you can compare sites.</p>
+      </div>
+
+      <div class="work">
+      <div id="site-detail" hidden>
+        <div class="site-head">
+          <div>
+            <h2 id="site-name"></h2>
+            <p id="site-meta" class="muted"></p>
+          </div>
+        </div>
+        <table class="params" aria-label="Parameters at this site">
+          <thead><tr><th></th><th>Parameter</th><th class="num">Latest</th><th>When</th></tr></thead>
+          <tbody id="param-rows"></tbody>
+        </table>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-tools">
+          <div class="ranges" id="ranges" role="group" aria-label="Time range"></div>
+          <div class="series-chips" id="chips"></div>
+          <div class="chart-actions">
+            <label class="toggle inline"><input type="checkbox" id="log" /> Log scale</label>
+            <button id="download" class="btn ghost" disabled>Download CSV</button>
+            <button id="clear" class="btn ghost" disabled>Clear chart</button>
+          </div>
+        </div>
+        <div id="chart" class="chart"></div>
+        <p id="chart-empty" class="empty small">Tick a parameter to chart it.</p>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../siec-auth.js"></script>
+  <script src="vendor/leaflet.js"></script>
+  <script src="vendor/echarts.min.js"></script>
+  <script src="sensors.js"></script>
+</body>
+</html>
