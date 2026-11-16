@@ -44,6 +44,8 @@
     // This is used in various text messages. You should also set <title> in index.html
     "appName": "Eye on the Almond",
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
+    // Eye on the Almond: no Terria logo in the bottom bar.
+    "hideTerriaLogo": true,
     "brandBarElements": [
       "",
       "<span style=\"display:block;padding:6px 0;color:#ffffff;font-size:20px;font-weight:600;letter-spacing:0.02em\">Data explorer</span>",
