@@ -1526,24 +1526,32 @@
               "almond-rivers"
             ],
             "initialCamera": {
-              "west": -4.03594,
-              "south": 55.712737,
-              "east": -3.00406,
-              "north": 56.087263,
+              "west": -3.866097,
+              "south": 55.76973,
+              "east": -3.173903,
+              "north": 56.03027,
               "position": {
-                "x": 3607421.42,
-                "y": -267838.14,
-                "z": 5263638.8
+                "x": 3600027.14,
+                "y": -253361.66,
+                "z": 5264569.25
               },
               "direction": {
-                "x": -0.566674,
-                "y": 0.802779,
-                "z": -0.185542
+                "x": -0.578638,
+                "y": 0.786643,
+                "z": -0.21534
               },
               "up": {
-                "x": 0.319704,
-                "y": 0.421777,
-                "z": 0.848465
+                "x": 0.298614,
+                "y": 0.450039,
+                "z": 0.841602
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
               }
             }
           }
@@ -1567,24 +1575,41 @@
               "almond-rain"
             ],
             "initialCamera": {
-              "west": -3.881396,
-              "south": 55.766589,
-              "east": -3.118604,
-              "north": 56.043411,
+              "west": -3.788451,
+              "south": 55.796442,
+              "east": -3.211549,
+              "north": 56.013558,
               "position": {
-                "x": 3610805.6,
-                "y": -239774.59,
-                "z": 5262286.2
+                "x": 3600946.86,
+                "y": -240462.47,
+                "z": 5265710.28
               },
               "direction": {
-                "x": -0.851165,
-                "y": 0.480177,
-                "z": -0.212007
+                "x": -0.734063,
+                "y": 0.615907,
+                "z": -0.286025
               },
               "up": {
-                "x": -0.012449,
-                "y": 0.38532,
-                "z": 0.922699
+                "x": 0.09237,
+                "y": 0.50784,
+                "z": 0.856485
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-zones": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
+              },
+              "almond-levels": {
+                "show": true
+              },
+              "almond-rain": {
+                "show": true
               }
             }
           }
@@ -1607,24 +1632,38 @@
               "almond-flows"
             ],
             "initialCamera": {
-              "west": -3.571558,
-              "south": 55.863326,
-              "east": -3.358442,
-              "north": 55.940674,
+              "west": -3.551529,
+              "south": 55.869433,
+              "east": -3.378471,
+              "north": 55.934567,
               "position": {
-                "x": 3581820.21,
-                "y": -227021.17,
-                "z": 5261045.24
+                "x": 3581617.37,
+                "y": -225288.15,
+                "z": 5261409.97
               },
               "direction": {
-                "x": -0.427929,
-                "y": 0.846876,
-                "z": -0.315719
+                "x": -0.448111,
+                "y": 0.820001,
+                "z": -0.356084
               },
               "up": {
-                "x": 0.392521,
-                "y": 0.488796,
-                "z": 0.779105
+                "x": 0.369397,
+                "y": 0.532559,
+                "z": 0.761529
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
+              },
+              "almond-levels": {
+                "show": true
+              },
+              "almond-flows": {
+                "show": true
               }
             }
           }
@@ -1647,24 +1686,38 @@
               "almond-permits"
             ],
             "initialCamera": {
-              "west": -3.938822,
-              "south": 55.75973,
-              "east": -3.221178,
-              "north": 56.02027,
+              "west": -3.868339,
+              "south": 55.781442,
+              "east": -3.291661,
+              "north": 55.998558,
               "position": {
-                "x": 3595448.4,
-                "y": -256240.04,
-                "z": 5268264.81
+                "x": 3594888.03,
+                "y": -250472.91,
+                "z": 5268405.18
               },
               "direction": {
-                "x": -0.497568,
-                "y": 0.783139,
-                "z": -0.372987
+                "x": -0.530583,
+                "y": 0.755078,
+                "z": -0.385148
               },
               "up": {
-                "x": 0.321809,
-                "y": 0.565965,
-                "z": 0.759027
+                "x": 0.285601,
+                "y": 0.587065,
+                "z": 0.757487
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-subcatchments": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
+              },
+              "almond-permits": {
+                "show": true
               }
             }
           }
@@ -1698,42 +1751,51 @@
                 "stopTime": "2026-10-26T06:00:00Z",
                 "currentTime": "2026-10-23T06:00:00Z",
                 "isPaused": false,
-                "multiplier": 4320
+                "multiplier": 4320,
+                "show": true
               },
               "almond-storm-river": {
                 "startTime": "2026-10-23T06:00:00Z",
                 "stopTime": "2026-10-26T06:00:00Z",
                 "currentTime": "2026-10-23T06:00:00Z",
                 "isPaused": false,
-                "multiplier": 4320
+                "multiplier": 4320,
+                "show": true
               },
               "almond-storm-overflows": {
                 "startTime": "2026-10-23T06:00:00Z",
                 "stopTime": "2026-10-26T06:00:00Z",
                 "currentTime": "2026-10-23T06:00:00Z",
                 "isPaused": false,
-                "multiplier": 4320
+                "multiplier": 4320,
+                "show": true
+              },
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
               }
             },
             "initialCamera": {
-              "west": -3.956266,
-              "south": 55.750305,
-              "east": -3.103734,
-              "north": 56.059695,
+              "west": -3.856911,
+              "south": 55.781968,
+              "east": -3.203089,
+              "north": 56.028032,
               "position": {
-                "x": 3606612.14,
-                "y": -252692.46,
-                "z": 5267796.47
+                "x": 3600302.04,
+                "y": -248002.56,
+                "z": 5269051.71
               },
               "direction": {
-                "x": -0.688185,
-                "y": 0.653774,
-                "z": -0.314613
+                "x": -0.641243,
+                "y": 0.685116,
+                "z": -0.345577
               },
               "up": {
-                "x": 0.134003,
-                "y": 0.540701,
-                "z": 0.830473
+                "x": 0.175856,
+                "y": 0.569583,
+                "z": 0.802901
               }
             }
           }
@@ -1750,30 +1812,48 @@
           {
             "stratum": "user",
             "workbench": [
+              "almond-overflows",
               "almond-rf-med",
               "almond-rf-high",
               "almond-rivers",
               "almond-levels"
             ],
             "initialCamera": {
-              "west": -3.61032,
-              "south": 55.858397,
-              "east": -3.41968,
-              "north": 55.927603,
+              "west": -3.591896,
+              "south": 55.864051,
+              "east": -3.438104,
+              "north": 55.921949,
               "position": {
-                "x": 3579365.14,
-                "y": -229119.47,
-                "z": 5262124.19
+                "x": 3579777.56,
+                "y": -227317.08,
+                "z": 5262279.42
               },
               "direction": {
-                "x": -0.192675,
-                "y": 0.849035,
-                "z": -0.491951
+                "x": -0.239427,
+                "y": 0.80129,
+                "z": -0.548279
               },
               "up": {
-                "x": 0.54217,
-                "y": 0.509982,
-                "z": 0.66781
+                "x": 0.52316,
+                "y": 0.582185,
+                "z": 0.622386
+              }
+            },
+            "models": {
+              "almond-overflows": {
+                "show": true
+              },
+              "almond-rf-med": {
+                "show": true
+              },
+              "almond-rf-high": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
+              },
+              "almond-levels": {
+                "show": true
               }
             }
           }
@@ -1795,24 +1875,35 @@
               "almond-fish-obstacles"
             ],
             "initialCamera": {
-              "west": -3.588393,
-              "south": 55.873936,
-              "east": -3.251607,
-              "north": 55.996064,
+              "west": -3.554715,
+              "south": 55.88434,
+              "east": -3.285285,
+              "north": 55.98566,
               "position": {
-                "x": 3586035.54,
-                "y": -227744.22,
-                "z": 5261958.9
+                "x": 3584796.95,
+                "y": -225208.43,
+                "z": 5262974.48
               },
               "direction": {
-                "x": -0.660763,
-                "y": 0.728322,
-                "z": -0.181493
+                "x": -0.672552,
+                "y": 0.704417,
+                "z": -0.226871
               },
               "up": {
-                "x": 0.237891,
-                "y": 0.432538,
-                "z": 0.869666
+                "x": 0.202661,
+                "y": 0.470152,
+                "z": 0.859003
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-rmi": {
+                "show": true
+              },
+              "almond-fish-obstacles": {
+                "show": true
               }
             }
           }
@@ -1835,24 +1926,38 @@
               "almond-rain"
             ],
             "initialCamera": {
-              "west": -3.389277,
-              "south": 55.941468,
-              "east": -3.220723,
-              "north": 56.002532,
+              "west": -3.372422,
+              "south": 55.94667,
+              "east": -3.237578,
+              "north": 55.99733,
               "position": {
-                "x": 3579697.35,
-                "y": -210492.1,
-                "z": 5260765.56
+                "x": 3578653.9,
+                "y": -209746.63,
+                "z": 5261784.11
               },
               "direction": {
-                "x": -0.889866,
-                "y": 0.438334,
-                "z": 0.126501
+                "x": -0.902793,
+                "y": 0.426027,
+                "z": 0.058869
               },
               "up": {
-                "x": 0.215602,
-                "y": 0.15968,
-                "z": 0.963337
+                "x": 0.152851,
+                "y": 0.189892,
+                "z": 0.969834
+              }
+            },
+            "models": {
+              "almond-boundary": {
+                "show": true
+              },
+              "almond-rivers": {
+                "show": true
+              },
+              "almond-levels": {
+                "show": true
+              },
+              "almond-rain": {
+                "show": true
               }
             }
           }
