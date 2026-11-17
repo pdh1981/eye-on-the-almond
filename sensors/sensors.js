@@ -497,7 +497,10 @@
     const n = (k) => [...state.sites.values()].filter((s) => s.kind === k && s.inside).length;
     status(`${n("live")} live sites and ${n("mot")} sampling sites in the catchment`);
     const h = new URLSearchParams(location.hash.slice(1));
-    const want = h.get("site");
+    // #ds=<ids> alone opens the site that holds the first of those datastreams.
+    const firstDs = (h.get("ds") || "").split(",").filter(Boolean)[0];
+    const want = h.get("site") ||
+      (firstDs ? ([...state.sites.values()].find((s) => s.params.some((p) => String(p.ds) === firstDs)) || {}).id : null);
     renderList();
     renderChart();
     if (want && state.sites.has(want)) {
