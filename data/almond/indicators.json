@@ -5,6 +5,11 @@
     "sensor": "WQ009",
     "sensorName": "Forth-ERA Proteus at Memsstar",
     "staleHours": 6,
+    "demo": {
+      "enabled": true,
+      "replayDays": 30,
+      "_demo": "While the sensor is offline, replay its own past readings (same time of day, cycling through the last replayDays days before it went offline), clearly labelled Demo. Set enabled to false, or add ?demo=0 to the address, to turn off."
+    },
     "_standards": "SEPA river standards for lowland, high-alkalinity rivers (Scotland River Basin Management Planning Directions 2014; UKTAG). Official classification uses a year of samples (10th or 90th percentile); this panel applies the same boundaries to the latest reading, so it is indicative only.",
     "tests": [
       {
