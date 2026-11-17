@@ -1,0 +1,36 @@
+body { overflow-y: auto; }
+.views { display: flex; gap: 4px; margin-left: 12px; }
+.views a { color: #cfd6dc; text-decoration: none; padding: 7px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.views a:hover { background: #323b44; color: #fff; }
+.views a.active { background: var(--secondary); color: var(--dark); }
+.bar .bar-link { margin-left: auto; }
+.page { max-width: 1180px; margin: 0 auto; padding: 20px 20px 40px; }
+.page h1 { font-size: 24px; margin: 6px 0 6px; }
+.page h2 { font-size: 16px; margin: 0; }
+.lead { color: var(--muted); margin: 0 0 16px; max-width: 820px; line-height: 1.45; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 14px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.tile b { display: block; font-size: 26px; line-height: 1.1; }
+.tile span { color: var(--muted); font-size: 13px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; }
+.panel-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.panel-head .ranges { margin-left: auto; }
+.chart { height: 340px; width: 100%; }
+.chart.short { height: 220px; }
+.note { color: var(--muted); font-size: 13px; margin: 6px 0 12px; }
+.note.warn { background: #fff6e6; border: 1px solid #f2d39b; border-radius: 6px; padding: 8px 12px; color: #6b4a12; }
+.note:empty { display: none; }
+.small { font-size: 13px; }
+.muted { color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.data th, table.data td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.data th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+table.data td.num, table.data th.num { text-align: right; }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-weight: 700; font-size: 12px; color: #fff; }
+.status { color: var(--muted); font-size: 14px; }
+@media (max-width: 760px) {
+  .bar { height: auto; flex-wrap: wrap; padding: 10px 16px; }
+  .views { order: 3; width: 100%; margin: 0; overflow-x: auto; }
+  .chart { height: 280px; }
+}

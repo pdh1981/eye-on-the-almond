@@ -77,5 +77,6 @@
     "linkText": "Check SEPA flood updates"
   },
   "placement": "strip",
-  "overflowSummaryUrl": "data/live/overflow-summary.json"
+  "overflowSummaryUrl": "data/live/overflow-summary.json",
+  "overflowEventsUrl": "data/live/overflow-events.json"
 }

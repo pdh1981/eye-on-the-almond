@@ -165,4 +165,4 @@ function start() {
   console.log(`Overflow log: polling Scottish Water every 15 minutes, saving to ${LOG_FILE}`);
 }
 
-module.exports = { start, summary, poll, latestRows: () => rows };
+module.exports = { start, summary, poll, latestRows: () => rows, events: () => log };

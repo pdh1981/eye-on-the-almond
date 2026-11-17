@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>River data · Eye on the Almond</title>
+  <link rel="icon" href="../favicons/favicon-32x32.png" />
+  <link rel="stylesheet" href="../sensors/sensors.css" />
+  <link rel="stylesheet" href="trends.css" />
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="../" title="Back to the map">
+      <img src="../images/almond-logo.svg" alt="Eye on the Almond" height="40" />
+    </a>
+    <span class="bar-title">River data</span>
+    <nav class="views" aria-label="Data">
+      <a href="#rain" data-view="rain">Rainfall</a>
+      <a href="#spills" data-view="spills">Sewer spills</a>
+      <a href="#health" data-view="health">River health</a>
+      <a href="../sensors/" data-view="sensors">Sensors</a>
+    </nav>
+    <a class="bar-link" href="../">Back to the map</a>
+  </header>
+
+  <main class="page">
+    <section id="rain" class="view" hidden>
+      <h1>Rainfall over the catchment</h1>
+      <p class="lead">Average of SEPA's rain gauges inside the catchment (<span id="rain-gauges">Whitburn and Gogarbank</span>). Daily totals run from 09:00 to 09:00.</p>
+      <div class="tiles" id="rain-tiles"></div>
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Daily rainfall</h2>
+          <div class="ranges" id="rain-ranges" role="group" aria-label="Time range"></div>
+        </div>
+        <div class="chart" id="rain-daily"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Monthly rainfall compared with recent years</h2></div>
+        <div class="chart" id="rain-monthly"></div>
+        <p class="note" id="rain-monthly-note"></p>
+      </div>
+      <p class="note">Source: SEPA rainfall data (timeseries.sepa.org.uk). Recent values are provisional.</p>
+    </section>
+
+    <section id="spills" class="view" hidden>
+      <h1>Sewer overflow spills</h1>
+      <p class="lead">Overflows on Scottish Water's network in and near the catchment, from Scottish Water's near-real-time overflow monitoring. A monitor shows an overflow has probably happened; it does not confirm it or say how much was spilled.</p>
+      <div class="tiles" id="spill-tiles"></div>
+      <p class="note warn" id="spill-log-note"></p>
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Spills per day</h2>
+          <div class="ranges" id="spill-ranges" role="group" aria-label="Time range"></div>
+        </div>
+        <div class="chart" id="spill-daily"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Overflows, most spills first</h2><span class="muted small" id="spill-table-period"></span></div>
+        <div class="table-wrap"><table class="data" id="spill-table"></table></div>
+      </div>
+      <p class="note">Source: Scottish Water overflow event monitoring (open data), checked every 15 minutes.</p>
+    </section>
+
+    <section id="health" class="view" hidden>
+      <h1>Long-term river health</h1>
+      <p class="lead">SEPA's overall classification of each river stretch (water body) in the catchment, <span id="health-year"></span>. It combines water quality, ecology, flow and physical condition, assessed over several years.</p>
+      <div class="panel">
+        <div class="panel-head"><h2>Stretches by status</h2></div>
+        <div class="chart short" id="health-chart"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Each stretch</h2></div>
+        <div class="table-wrap"><table class="data" id="health-table"></table></div>
+      </div>
+      <p class="note">Source: SEPA Water Classification Hub. Follow a stretch's link for what is holding it back.</p>
+    </section>
+
+    <p class="status" id="status" aria-live="polite"></p>
+  </main>
+
+  <script src="../sensors/vendor/echarts.min.js"></script>
+  <script src="trends.js"></script>
+</body>
+</html>
