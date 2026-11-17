@@ -1204,6 +1204,190 @@
             "template": "### {{station}}\n\n**{{date}}:** {{flow_m3s}} m³/s, {{percent_of_median}}% of its usual (median) daily flow."
           },
           "isOpenInWorkbench": false
+        },
+        {
+          "id": "almond-storm-rain",
+          "type": "csv",
+          "name": "October 2026 storm: rainfall each hour",
+          "url": "data/almond/storm/rain.csv",
+          "description": "**Full title:** Rainfall each hour at SEPA's gauges, 23 to 26 October 2026 storm\n\nHourly rainfall (mm) at Whitburn and Gogarbank. The bigger and darker the circle, the heavier the rain that hour.",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. Licensed under the Open Government Licence v3.0.",
+          "columns": [
+            {
+              "name": "lat",
+              "type": "latitude"
+            },
+            {
+              "name": "lon",
+              "type": "longitude"
+            },
+            {
+              "name": "time",
+              "type": "time"
+            },
+            {
+              "name": "rain_mm",
+              "title": "Rain this hour (mm)",
+              "type": "scalar"
+            }
+          ],
+          "defaultStyle": {
+            "time": {
+              "timeColumn": "time",
+              "idColumns": [
+                "gauge"
+              ]
+            },
+            "color": {
+              "colorColumn": "rain_mm",
+              "binMaximums": [
+                0.1,
+                1,
+                2,
+                3,
+                100
+              ],
+              "binColors": [
+                "#cfe3f2",
+                "#8fbde0",
+                "#4a90c2",
+                "#2f6f9f",
+                "#173b5c"
+              ],
+              "nullColor": "#cfe3f2"
+            },
+            "pointSize": {
+              "pointSizeColumn": "rain_mm",
+              "sizeFactor": 26,
+              "sizeOffset": 8,
+              "nullSize": 8
+            }
+          },
+          "startTime": "2026-10-23T06:00:00Z",
+          "stopTime": "2026-10-26T06:00:00Z",
+          "currentTime": "2026-10-23T06:00:00Z",
+          "activeStyle": "rain_mm"
+        },
+        {
+          "id": "almond-storm-river",
+          "type": "csv",
+          "name": "October 2026 storm: river flow each hour",
+          "url": "data/almond/storm/river.csv",
+          "description": "**Full title:** River flow at SEPA's gauges each hour, 23 to 26 October 2026 storm\n\nEach gauge's flow (level at Whitburn) as a percentage of the peak it usually reaches once a year (the median yearly maximum).",
+          "attribution": "Contains SEPA data © Scottish Environment Protection Agency and database right. Licensed under the Open Government Licence v3.0.",
+          "columns": [
+            {
+              "name": "lat",
+              "type": "latitude"
+            },
+            {
+              "name": "lon",
+              "type": "longitude"
+            },
+            {
+              "name": "time",
+              "type": "time"
+            },
+            {
+              "name": "value",
+              "title": "Flow (m³/s; level in m at Whitburn)",
+              "type": "scalar"
+            },
+            {
+              "name": "pct_of_yearly_peak",
+              "title": "% of usual yearly peak",
+              "type": "scalar"
+            }
+          ],
+          "defaultStyle": {
+            "time": {
+              "timeColumn": "time",
+              "idColumns": [
+                "gauge"
+              ]
+            },
+            "color": {
+              "colorColumn": "pct_of_yearly_peak",
+              "binMaximums": [
+                15,
+                30,
+                50,
+                75,
+                1000
+              ],
+              "binColors": [
+                "#4c9a2a",
+                "#a5c93f",
+                "#e8c124",
+                "#e07b26",
+                "#c0392b"
+              ]
+            },
+            "pointSize": {
+              "pointSizeColumn": "pct_of_yearly_peak",
+              "sizeFactor": 10,
+              "sizeOffset": 9,
+              "nullSize": 9
+            }
+          },
+          "startTime": "2026-10-23T06:00:00Z",
+          "stopTime": "2026-10-26T06:00:00Z",
+          "currentTime": "2026-10-23T06:00:00Z",
+          "activeStyle": "pct_of_yearly_peak"
+        },
+        {
+          "id": "almond-storm-overflows",
+          "type": "csv",
+          "name": "October 2026 storm: sewer overflow spills",
+          "url": "data/almond/storm/overflows.csv",
+          "description": "**Full title:** Sewer overflow spills during the 23 to 26 October 2026 storm\n\nA red dot shows while an overflow is spilling. From Scottish Water's overflow monitoring, as recorded by our spill log; the log only knows each overflow's last two spills from before 16 November 2026, so some spills in this storm may be missing.",
+          "attribution": "Overflow data: Scottish Water (open data).",
+          "columns": [
+            {
+              "name": "lat",
+              "type": "latitude"
+            },
+            {
+              "name": "lon",
+              "type": "longitude"
+            },
+            {
+              "name": "start",
+              "type": "time"
+            },
+            {
+              "name": "end",
+              "type": "time"
+            },
+            {
+              "name": "minutes",
+              "title": "Spill length (minutes)",
+              "type": "scalar"
+            }
+          ],
+          "defaultStyle": {
+            "time": {
+              "timeColumn": "start",
+              "endTimeColumn": "end"
+            },
+            "color": {
+              "colorColumn": "minutes",
+              "binMaximums": [
+                1000000000.0
+              ],
+              "binColors": [
+                "#c0392b"
+              ],
+              "nullColor": "#c0392b"
+            },
+            "pointSize": {
+              "nullSize": 11
+            }
+          },
+          "activeStyle": "minutes",
+          "startTime": "2026-10-23T06:00:00Z",
+          "stopTime": "2026-10-26T06:00:00Z",
+          "currentTime": "2026-10-23T06:00:00Z"
         }
       ]
     },
@@ -1342,10 +1526,25 @@
               "almond-rivers"
             ],
             "initialCamera": {
-              "west": -3.86,
-              "south": 55.74,
-              "east": -3.24,
-              "north": 55.995
+              "west": -4.03594,
+              "south": 55.712737,
+              "east": -3.00406,
+              "north": 56.087263,
+              "position": {
+                "x": 3607421.42,
+                "y": -267838.14,
+                "z": 5263638.8
+              },
+              "direction": {
+                "x": -0.566674,
+                "y": 0.802779,
+                "z": -0.185542
+              },
+              "up": {
+                "x": 0.319704,
+                "y": 0.421777,
+                "z": 0.848465
+              }
             }
           }
         ]
@@ -1368,10 +1567,25 @@
               "almond-rain"
             ],
             "initialCamera": {
-              "west": -3.86,
-              "south": 55.74,
-              "east": -3.24,
-              "north": 55.995
+              "west": -3.881396,
+              "south": 55.766589,
+              "east": -3.118604,
+              "north": 56.043411,
+              "position": {
+                "x": 3610805.6,
+                "y": -239774.59,
+                "z": 5262286.2
+              },
+              "direction": {
+                "x": -0.851165,
+                "y": 0.480177,
+                "z": -0.212007
+              },
+              "up": {
+                "x": -0.012449,
+                "y": 0.38532,
+                "z": 0.922699
+              }
             }
           }
         ]
@@ -1393,10 +1607,25 @@
               "almond-flows"
             ],
             "initialCamera": {
-              "west": -3.62,
-              "south": 55.86,
-              "east": -3.38,
-              "north": 55.94
+              "west": -3.571558,
+              "south": 55.863326,
+              "east": -3.358442,
+              "north": 55.940674,
+              "position": {
+                "x": 3581820.21,
+                "y": -227021.17,
+                "z": 5261045.24
+              },
+              "direction": {
+                "x": -0.427929,
+                "y": 0.846876,
+                "z": -0.315719
+              },
+              "up": {
+                "x": 0.392521,
+                "y": 0.488796,
+                "z": 0.779105
+              }
             }
           }
         ]
@@ -1418,10 +1647,94 @@
               "almond-permits"
             ],
             "initialCamera": {
-              "west": -3.86,
-              "south": 55.74,
-              "east": -3.24,
-              "north": 55.995
+              "west": -3.938822,
+              "south": 55.75973,
+              "east": -3.221178,
+              "north": 56.02027,
+              "position": {
+                "x": 3595448.4,
+                "y": -256240.04,
+                "z": 5268264.81
+              },
+              "direction": {
+                "x": -0.497568,
+                "y": 0.783139,
+                "z": -0.372987
+              },
+              "up": {
+                "x": 0.321809,
+                "y": 0.565965,
+                "z": 0.759027
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "almond-storm",
+      "title": "Watch a storm hit me",
+      "text": "<p>Here's a real storm: 23 to 26 October 2026, played back an hour every second or so.</p><p>The blue circles are rain gauges; the bigger they grow, the harder it's raining. The coloured dots are my river gauges: green is normal, orange and red mean I'm close to my usual yearly peak. Whitburn, near my source, reached it.</p><p>Watch the red dots: each one is a sewer overflow spilling into me. At least 49 spilled during this storm.</p>",
+      "shareData": {
+        "version": "8.0.0",
+        "initSources": [
+          {
+            "stratum": "user",
+            "workbench": [
+              "almond-boundary",
+              "almond-rivers",
+              "almond-storm-overflows",
+              "almond-storm-river",
+              "almond-storm-rain"
+            ],
+            "timeline": [
+              "almond-storm-rain",
+              "almond-storm-river",
+              "almond-storm-overflows"
+            ],
+            "models": {
+              "almond-storm-rain": {
+                "startTime": "2026-10-23T06:00:00Z",
+                "stopTime": "2026-10-26T06:00:00Z",
+                "currentTime": "2026-10-23T06:00:00Z",
+                "isPaused": false,
+                "multiplier": 4320
+              },
+              "almond-storm-river": {
+                "startTime": "2026-10-23T06:00:00Z",
+                "stopTime": "2026-10-26T06:00:00Z",
+                "currentTime": "2026-10-23T06:00:00Z",
+                "isPaused": false,
+                "multiplier": 4320
+              },
+              "almond-storm-overflows": {
+                "startTime": "2026-10-23T06:00:00Z",
+                "stopTime": "2026-10-26T06:00:00Z",
+                "currentTime": "2026-10-23T06:00:00Z",
+                "isPaused": false,
+                "multiplier": 4320
+              }
+            },
+            "initialCamera": {
+              "west": -3.956266,
+              "south": 55.750305,
+              "east": -3.103734,
+              "north": 56.059695,
+              "position": {
+                "x": 3606612.14,
+                "y": -252692.46,
+                "z": 5267796.47
+              },
+              "direction": {
+                "x": -0.688185,
+                "y": 0.653774,
+                "z": -0.314613
+              },
+              "up": {
+                "x": 0.134003,
+                "y": 0.540701,
+                "z": 0.830473
+              }
             }
           }
         ]
@@ -1443,10 +1756,25 @@
               "almond-levels"
             ],
             "initialCamera": {
-              "west": -3.56,
-              "south": 55.875,
-              "east": -3.47,
-              "north": 55.915
+              "west": -3.61032,
+              "south": 55.858397,
+              "east": -3.41968,
+              "north": 55.927603,
+              "position": {
+                "x": 3579365.14,
+                "y": -229119.47,
+                "z": 5262124.19
+              },
+              "direction": {
+                "x": -0.192675,
+                "y": 0.849035,
+                "z": -0.491951
+              },
+              "up": {
+                "x": 0.54217,
+                "y": 0.509982,
+                "z": 0.66781
+              }
             }
           }
         ]
@@ -1467,10 +1795,25 @@
               "almond-fish-obstacles"
             ],
             "initialCamera": {
-              "west": -3.62,
-              "south": 55.86,
-              "east": -3.38,
-              "north": 55.96
+              "west": -3.588393,
+              "south": 55.873936,
+              "east": -3.251607,
+              "north": 55.996064,
+              "position": {
+                "x": 3586035.54,
+                "y": -227744.22,
+                "z": 5261958.9
+              },
+              "direction": {
+                "x": -0.660763,
+                "y": 0.728322,
+                "z": -0.181493
+              },
+              "up": {
+                "x": 0.237891,
+                "y": 0.432538,
+                "z": 0.869666
+              }
             }
           }
         ]
@@ -1492,10 +1835,25 @@
               "almond-rain"
             ],
             "initialCamera": {
-              "west": -3.86,
-              "south": 55.74,
-              "east": -3.24,
-              "north": 55.995
+              "west": -3.389277,
+              "south": 55.941468,
+              "east": -3.220723,
+              "north": 56.002532,
+              "position": {
+                "x": 3579697.35,
+                "y": -210492.1,
+                "z": 5260765.56
+              },
+              "direction": {
+                "x": -0.889866,
+                "y": 0.438334,
+                "z": 0.126501
+              },
+              "up": {
+                "x": 0.215602,
+                "y": 0.15968,
+                "z": 0.963337
+              }
             }
           }
         ]
