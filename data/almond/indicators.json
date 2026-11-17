@@ -77,6 +77,21 @@
     "linkText": "Check SEPA flood updates"
   },
   "placement": "strip",
+  "riverCheck": {
+    "_comment": "'Can I get in the river today?' card (lib/Views/RiverCheck.tsx). Indicative only, not health advice. Thresholds are starting guesses to be agreed with SEPA / Forth Rivers Trust. The worst signal sets the answer.",
+    "spotsUrl": "data/almond/spots.json",
+    "defaultSpot": "almondell",
+    "avoidIfSpillWithinHours": 24,
+    "cautionIfSpillWithinHours": 48,
+    "cautionIfRainLast24hMm": 10,
+    "_flow": "Flow compared with the gauge's long-term percentiles: above Q10 (top 10% of flows) = avoid, above Q30 = caution. Rising fast = up by risingFactor or more over risingHours while above the median = avoid.",
+    "risingFactor": 1.5,
+    "risingHours": 3,
+    "flowStaleHours": 3,
+    "_waterQuality": "Sensor Poor/Bad = avoid, Moderate = caution. When there is no live reading (offline, demo replay or not signed in) the answer is at best caution, since we can't rule a problem out.",
+    "noLiveWaterQuality": "caution",
+    "feedUrl": "data/live/sw-overflows.json"
+  },
   "overflowSummaryUrl": "data/live/overflow-summary.json",
   "overflowEventsUrl": "data/live/overflow-events.json"
 }
